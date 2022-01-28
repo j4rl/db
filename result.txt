@@ -1,0 +1,6 @@
+arr1: [1, "stig",  "kjhgsfdkjhsdfgksfjdhgsdf", 100]
+arr2: [2, "eva", "s,m.nxclkjliulkncx,kxjlk", 100]
+
+
+arr1[2]
+arr1['user']

@@ -3,15 +3,9 @@
     $dbserver="localhost";
     $dbuser="root";
     $dbpass="";
-    $dbname="brak";
+    $dbname="can";
     $conn=mysqli_connect($dbserver,$dbuser,$dbpass,$dbname);
 
-    if(isset($_POST['btn'])){
-        $user=$_POST['usr'];
-        $pass=md5($_POST['pwd']);
-        $sql="INSERT INTO `tbluser`(`username`, `password`) VALUES ('$user','$pass')";
-        $result=mysqli_query($conn,$sql) or die(mysqli_error($conn));
-    }
 
 ?>
 <html lang="en">
@@ -20,7 +14,7 @@
     <title>Add user</title>
 </head>
 <body>
-    <form method="post" action="adduser.php">
+    <form method="post" action="add.php">
         <input type="text" name="usr">
         <input type="password" name="pwd">
         <input type="submit" value="Add user" name="btn">
@@ -30,7 +24,7 @@
         $result=mysqli_query($conn,$sql);
         
         while($row=mysqli_fetch_assoc($result)){
-            echo $row['username']."<br>";
+            echo $row['user']."<br>";
         }
     ?>
 </body>

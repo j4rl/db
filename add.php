@@ -4,10 +4,12 @@
     $dbpass="";
     $dbname="can";
     $conn=mysqli_connect($dbserver,$dbuser,$dbpass,$dbname);
-    $id=$_GET["del"];
-    $sql="DELETE FROM tbluser WHERE id=$id";
+
+    $username=$_POST['usr'];
+    $password=md5($_POST['pwd'].$username);
+
+    $sql="INSERT INTO tbluser (user, pass) VALUES ('$username', '$password')";
     $result=mysqli_query($conn, $sql);
-    
-    header("Location: listuser.php");
+    header("Location: adduser.php");
 
 ?>
