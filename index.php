@@ -31,11 +31,17 @@
     <title>Document</title>
 </head>
 <body>
+    <?php require_once("_nav.php") ?>
+    <?php if(isset(intval($_SESSION['level'])) ){
+
+     }else{  ?>
     <form method="post" action="index.php">
         <input type="text" name="usr" placeholder="Användarnamn">
         <input type="password" name="pwd">
         <input type="submit" name="btn" value="Logga in!">
     </form>
-    <?=$msg?>    
+    <?php  } ?> 
+    <?=$msg?> 
+
 </body>
 </html>
