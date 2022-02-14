@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <?php 
     session_start();
+    function isLevel($level){
+        $succ=false;
+        if(isset($_SESSION["level"])){
+            $sessLevel=intval($_SESSION["level"]);
+            if($sessLevel<$level){
+                $succ=false;
+            }else{
+                $succ=true;
+            }
+        }
+        return $succ;
+    }
+
     if(!isset($_SESSION['level'])) header("Location: index.php");
     $dbserver="localhost";
     $dbuser="root";
@@ -27,7 +40,7 @@
                         <span class="user"><?=$row['user']?></span> Level: <?=$row['level']?><br>
                         <span class="pass"><?=$row['pass']?></span><br>
                         <a href="deluser.php?del=<?=$row['id']?>">Delete</a><br>
-                        <a href="edituser.php?edit=<?=$row['id']?>">Edit</a>
+                        <?php if(isLevel(50)){?><a href="edituser.php?edit=<?=$row['id']?>">Edit</a><?php }?>
                     </div>
             <?php  } ?>
         </div>

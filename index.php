@@ -18,8 +18,9 @@
             $_SESSION['level']=$raden['level'];
             $msg="Välkommen användare ".$raden['user']."!";
         }else{
-            $_SESSION['user']="";
-            $_SESSION['level']="";
+            session_destroy();
+            //$_SESSION['user']="";
+            //$_SESSION['level']="";
             $msg="Fel användarnamn eller lösenord!";
         }
     }
