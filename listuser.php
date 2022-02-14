@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php 
+    session_start();
+    if(!isset($_SESSION['level'])) header("Location: index.php");
     $dbserver="localhost";
     $dbuser="root";
     $dbpass="";
