@@ -7,8 +7,8 @@
     $conn=mysqli_connect($dbserver,$dbuser,$dbpass,$dbname);
 
     if(isset($_POST['btn'])){
-        $user=$_POST['user'];
-        $pass=$_POST['pass'];
+        $user=$_POST['usr'];
+        $pass=md5($_POST['pwd'].$user);
         $sql="INSERT INTO tbluser(user,pass) VALUES('$user','$pass')";
         $result=mysqli_query($conn, $sql);
     }

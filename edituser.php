@@ -52,7 +52,12 @@
 </html>
 <script>
     function showLevel(){
-        var level=document.getElementById("nrlevel");
-        level.innerHTML=document.getElementById("level").value;
+        var nrlevel=document.getElementById("nrlevel");
+        var level=document.getElementById("level");
+        nrlevel.innerHTML=level.value;
+        if(parseInt(level.value)<10){
+            level.style.color='red';
+        }
+        
     }
 </script>
