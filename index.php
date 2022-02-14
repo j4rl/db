@@ -31,8 +31,8 @@
     <title>Document</title>
 </head>
 <body>
-    <?php require_once("_nav.php") ?>
-    <?php if(isset(intval($_SESSION['level'])) ){
+    <?php require_once("_menu.php") ?>
+    <?php if(isset($_SESSION['level']) ){
 
      }else{  ?>
     <form method="post" action="index.php">
