@@ -9,9 +9,9 @@
     //Is editform submitted?
     if(isset($_POST['btn'])){
         $id=$_POST['id'];
-        $user=$_POST['user'];
-        $pass=$_POST['pass'];
-        $level=$_POST['level'];
+        $user=$_POST['usr'];
+        $pass=$_POST['pwd'];
+        $level=$_POST['lvl'];
         $sql="UPDATE tbluser SET user='$user', pass='$pass', level=$level WHERE id=$id";
         $result=mysqli_query($conn, $sql);
         header("Location: listuser.php");
@@ -39,9 +39,9 @@
 ?>
     <form method="post" action="edituser.php">
         <input type="hidden" name="id" value="<?=$user['id']?>">
-        <input type="text" name="user" value="<?=$user['user']?>">
-        <input type="password" name="pass" value="<?=$user['pass']?>">
-        <input type="range" name="level" id="level" min="1" max="100" value="<?=$user['level']?>" onchange="showLevel()">
+        <input type="text" name="usr" value="<?=$user['user']?>">
+        <input type="hidden" name="pwd" value="<?=$user['pass']?>">
+        <input type="range" name="level" id="lvl" min="1" max="100" value="<?=$user['level']?>" onchange="showLevel()">
         <span id="nrlevel"></span>
         <input type="submit" value="Edit user" name="btn">
     </form>

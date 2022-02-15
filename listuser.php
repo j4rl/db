@@ -1,25 +1,11 @@
 <!DOCTYPE html>
 <?php 
-    session_start();
-    function isLevel($level){
-        $succ=false;
-        if(isset($_SESSION["level"])){
-            $sessLevel=intval($_SESSION["level"]);
-            if($sessLevel<$level){
-                $succ=false;
-            }else{
-                $succ=true;
-            }
-        }
-        return $succ;
-    }
+    require_once('func.php');
+
 
     if(!isset($_SESSION['level'])) header("Location: index.php");
-    $dbserver="localhost";
-    $dbuser="root";
-    $dbpass="";
-    $dbname="can";
-    $conn=mysqli_connect($dbserver,$dbuser,$dbpass,$dbname);
+
+    $conn=makeConn('can');
 
     $sql="SELECT * FROM tbluser";
     $result=mysqli_query($conn, $sql);
