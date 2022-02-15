@@ -1,5 +1,5 @@
 @import "colors.css";
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@200;700&display=swap');
 
 /*font-family: 'Lato', sans-serif;*/
 
@@ -23,4 +23,24 @@
     background: var(--back-secondary);
     width: 100%;
     font-family: 'Lato', sans-serif;
+    font-weight: 200;
+    padding: .5em;
+}
+
+.row a {
+    text-decoration: none;
+}
+
+.row .pass {
+    display: none;
+}
+
+.row div {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.row a:hover {
+    text-decoration: none;
 }

@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="admin.css">
 </head>
 <body>
-<?php require_once("_header.php"); ?>
+<?php require_once("_aheader.php"); ?>
 <?php require_once("_menu.php"); ?>
 <h1>Edit user</h1> 
 <div class="edit">
