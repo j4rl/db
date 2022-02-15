@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <?php
-    session_start();
-    $dbserver="localhost";
-    $dbuser="root";
-    $dbpass="";
-    $db="can";
-    $conn=mysqli_connect($dbserver, $dbuser, $dbpass, $db);
+    require_once('func.php');
+    
+    $conn=makeConn('can');
     $msg="";
+
     if(isset($_POST['btn'])){
         $user=$_POST['usr'];
         $pass=md5($_POST['pwd'].$user);
@@ -19,23 +17,29 @@
             $msg="Välkommen användare ".$raden['user']."!";
         }else{
             session_destroy();
-            //$_SESSION['user']="";
-            //$_SESSION['level']="";
             $msg="Fel användarnamn eller lösenord!";
         }
     }
+
+    if(isset($_POST['logout'])){
+        session_destroy();
+        header("Location: index.php");
+    } 
 
 ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="stylesheet" href="admin.css">
 </head>
 <body>
     <?php require_once("_menu.php") ?>
-    <?php if(isset($_SESSION['level']) ){
-
-     }else{  ?>
+    <?php if(isset($_SESSION['level']) ){ ?>
+            <form method="post" action="index.php">
+                <input type="submit" name="logout" value="Logga ut!">
+            </form>
+    <?php }else{  ?>
     <form method="post" action="index.php">
         <input type="text" name="usr" placeholder="Användarnamn">
         <input type="password" name="pwd">
