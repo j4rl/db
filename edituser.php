@@ -27,8 +27,8 @@
 <body>
 <?php require_once("_aheader.php"); ?>
 <?php require_once("_menu.php"); ?>
-<h1>Edit user</h1> 
-<div class="edit">
+ 
+<div class="main"><h1>Edit user</h1>
     <?php
 //first time around, lets check if we got a redirection from listuser (is there a $_GET)?
     if(isset($_GET['edit'])){
@@ -41,8 +41,10 @@
         <input type="hidden" name="id" value="<?=$user['id']?>">
         <input type="text" name="usr" value="<?=$user['user']?>">
         <input type="hidden" name="pwd" value="<?=$user['pass']?>">
-        <input type="range" name="level" id="lvl" min="1" max="100" value="<?=$user['level']?>" onchange="showLevel()">
-        <span id="nrlevel"></span>
+        <div class="fullformdiv">
+            <input type="range" name="lvl" id="lvl" min="1" max="100" value="<?=$user['level']?>" onchange="showLevel()">
+            <span id="nrlevel"></span>
+        </div>
         <input type="submit" value="Edit user" name="btn">
     </form>
 <?php  } ?>
@@ -51,13 +53,12 @@
 </body>
 </html>
 <script>
-    function showLevel(){
-        var nrlevel=document.getElementById("nrlevel");
-        var level=document.getElementById("level");
-        nrlevel.innerHTML=level.value;
-        if(parseInt(level.value)<10){
-            level.style.color='red';
+        function showLevel(){
+        var level=document.getElementById('lvl').value;
+        document.getElementById('nrlevel').innerHTML=level;
         }
-        
-    }
+        showLevel();
+
+
+
 </script>

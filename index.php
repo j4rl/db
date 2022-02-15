@@ -34,19 +34,22 @@
     <link rel="stylesheet" href="admin.css">
 </head>
 <body>
+<?php require_once("_header.php"); ?>
     <?php require_once("_menu.php") ?>
+    <div class="main">
     <?php if(isset($_SESSION['level']) ){ ?>
             <form method="post" action="index.php">
                 <input type="submit" name="logout" value="Logga ut!">
             </form>
     <?php }else{  ?>
     <form method="post" action="index.php">
+        <h1>Log in</h1>
         <input type="text" name="usr" placeholder="Användarnamn">
         <input type="password" name="pwd">
         <input type="submit" name="btn" value="Logga in!">
     </form>
     <?php  } ?> 
     <?=$msg?> 
-
+</div>
 </body>
 </html>

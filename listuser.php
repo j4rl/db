@@ -19,14 +19,15 @@
 <body>
 <?php require_once("_aheader.php"); ?>
 <?php require_once("_menu.php"); ?>
-    <h1>List of users</h1>
-        <div class="list">
+    
+        <div class="main">
+            <h1>List of users</h1>
             <?php while($row=mysqli_fetch_assoc($result)){ ?>
                     <div class="row">
                         <span class="user"><?=$row['user']?></span><br>Level: <?=$row['level']?><br>
                         <span class="pass"><?=$row['pass']?></span><br>
                         <div>
-                        <a href="deluser.php?del=<?=$row['id']?>"><img src="delete.png"></a><br>
+                        <a href="deluser.php?del=<?=$row['id']?>"><img src="delete.png"></a>
                         <?php if(isLevel(50)){?><a href="edituser.php?edit=<?=$row['id']?>"><img src="edit.png"></a><?php }?>
                         </div>
                     </div>
