@@ -40,7 +40,7 @@
     <form method="post" action="edituser.php">
         <input type="hidden" name="id" value="<?=$user['id']?>">
         <input type="text" name="user" value="<?=$user['user']?>">
-        <input type="password" name="pass" value="<?=$user['pass']?>">
+        <input type="hidden" name="pass" value="<?=$user['pass']?>">
         <input type="range" name="level" id="level" min="1" max="100" value="<?=$user['level']?>" onchange="showLevel()">
         <span id="nrlevel"></span>
         <input type="submit" value="Edit user" name="btn">
