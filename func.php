@@ -20,7 +20,7 @@
     }
 
     function isLoggedIn(){
-        
+        return isLevel(10);
     }
 
 ?>
