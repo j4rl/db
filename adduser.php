@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <?php
-    $dbserver="localhost";
-    $dbuser="root";
-    $dbpass="";
-    $dbname="can";
-    $conn=mysqli_connect($dbserver,$dbuser,$dbpass,$dbname);
-
+    require_once('func.php');
+    $conn=makeConn('can');
+    
     if(isset($_POST['btn'])){
         $user=$_POST['usr'];
         $pass=md5($_POST['pwd'].$user);

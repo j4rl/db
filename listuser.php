@@ -27,8 +27,8 @@
                         <span class="user"><?=$row['user']?></span><br>Level: <?=$row['level']?><br>
                         <span class="pass"><?=$row['pass']?></span><br>
                         <div>
-                        <a href="deluser.php?del=<?=$row['id']?>"><img src="delete.png"></a>
-                        <?php if(isLevel(50)){?><a href="edituser.php?edit=<?=$row['id']?>"><img src="edit.png"></a><?php }?>
+                        <?php if(isLevel(80)){ ?><a href="deluser.php?del=<?=$row['id']?>"><img src="delete.png"></a><?php } ?>
+                        <?php if(isLevel(80)){ ?><a href="edituser.php?edit=<?=$row['id']?>"><img src="edit.png"></a><?php } ?>
                         </div>
                     </div>
             <?php  } ?>
