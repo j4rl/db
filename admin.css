@@ -27,9 +27,11 @@ body{
     margin: 0 auto;
 }
 body{
+    position:absolute;
     background: var(--back-primary);
     width:100%;
     height:100vh;
+    overflow: hidden;
 }
 h1{
     font-family: 'Staatliches', cursive;
@@ -144,4 +146,11 @@ header{
     padding: .5em 2em .5em 2em;
     text-align:right;
     background: var(--color-text);
+}
+.log{
+    --display:none;
+    position:absolute;
+    top:10%;
+    width:12rem;
+    left:102%;
 }
