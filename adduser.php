@@ -23,7 +23,8 @@
 <?php require_once("_menu.php"); ?>
 <div class="main">
     <form method="post" action="adduser.php">
-        <input type="text" name="usr">
+        <input type="text" name="realname" placeholder="Your name"
+        <input type="text" name="usr" placeholder="Username">
         <input type="password" name="pwd">
         <input type="submit" value="Add user" name="btn">
     </form>

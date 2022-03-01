@@ -23,4 +23,24 @@
         return isLevel(10);
     }
 
+    function setNewUserLoginTime($ID){
+        $conn=makeConn('can');
+        $stamp=date("U");
+        $sql="UPDATE tbluser SET lastlogin=".$stamp." WHERE id='$ID'";
+        $result=mysqli_query($conn, $sql);
+        return $result;
+    }
+
+    function lastLogin($userid){
+        $conn=makeConn('can');
+        $sql="SELECT * FROM tbluser WHERE id=$userid";
+        $result=mysqli_query($conn, $sql);
+        $raden=mysqli_fetch_assoc($result);
+        if($raden['lastlogin']){
+            return date('Y-m-d H:i:s', $raden['lastlogin']);
+        }else{
+            return "Never logged in!";
+        }
+    }
+
 ?>

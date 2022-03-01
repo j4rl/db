@@ -100,7 +100,7 @@ form input[type="submit"] {
     border: 1px solid var(--back-secondary);
     margin-bottom: 10px;
     background: var(--back-secondary);
-    color: var(--back-primary);
+    color: var(--color-text);
     cursor: pointer;
 }
 

@@ -14,10 +14,12 @@
             $raden=mysqli_fetch_assoc($result);
             $_SESSION['user']=$raden['user'];
             $_SESSION['level']=$raden['level'];
-            $msg="Välkommen användare ".$raden['user']."!";
+            $msg="Welcome ".$raden['realname']."!";
+            $id=$raden['id'];
+            setNewUserLoginTime($id);
         }else{
             session_destroy();
-            $msg="Fel användarnamn eller lösenord!";
+            $msg="Wrong username or password!<br>...loser!";
         }
     }
 
@@ -39,14 +41,14 @@
 
     <?php if(isset($_SESSION['level']) ){ ?>
             <form method="post" action="index.php" class="log">
-                <input type="submit" name="logout" value="Logga ut!">
+                <input type="submit" name="logout" value="Log out!">
             </form>
     <?php }else{  ?>
     <form method="post" action="index.php" class="log">
         <h1>Log in</h1>
         <input type="text" name="usr" placeholder="Användarnamn">
         <input type="password" name="pwd">
-        <input type="submit" name="btn" value="Logga in!">
+        <input type="submit" name="btn" value="Log in!">
     </form>
     <?php  } ?> 
 
