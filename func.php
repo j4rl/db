@@ -43,4 +43,16 @@
         }
     }
 
+    function fixDate($var){
+        $date=date('Y-m-d H:i', $var);
+        return $date;
+    }
+    
+    function getRealName($id){
+        $conn=makeConn('can');
+        $sql="SELECT * FROM tbluser WHERE id=$id";
+        $result=mysqli_query($conn, $sql);
+        $raden=mysqli_fetch_assoc($result);
+        return $raden['realname'];
+    }
 ?>

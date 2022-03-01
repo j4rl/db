@@ -11,7 +11,7 @@
         $user=$_SESSION['id'];
         $sql="INSERT INTO tblarticle (head, ingress, text, added, author) VALUES('$head','$ingress', '$text', $added, $user)";
         $result=mysqli_query($conn, $sql);
-        header("Location: listarticle.php");
+        header("Location: listarticles.php");
     }
 
 ?>
@@ -25,7 +25,7 @@
 <?php require_once("_aheader.php"); ?>
 <?php require_once("_menu.php"); ?>
 <div class="main">
-    <form method="post" action="adduser.php">
+    <form method="post" action="addarticle.php">
         <input type="text" name="head" placeholder="Article header">
         <input type="text" name="ingress" placeholder="Ingress">
         <input type="text" name="text" placeholder="Text">

@@ -8,6 +8,6 @@
     $sql="DELETE FROM tblarticle WHERE id=$id";
     $result=mysqli_query($conn, $sql);
     
-    header("Location: listuser.php");
+    header("Location: listarticles.php");
 
 ?>

@@ -39,9 +39,12 @@
     <form method="post" action="edituser.php"><h1>Edit user</h1>
         <input type="text" name="real" value="<?=$user['realname']?>">
         <input type="hidden" name="id" value="<?=$user['id']?>">
+        <input type="text" name="fakeid" value="<?=$user['id']?>" disabled>
         <input type="text" name="usr" value="<?=$user['user']?>">
         <input type="hidden" name="pwd" value="<?=$user['pass']?>">
+        <input type="password" name="fakepwd" value="<?=$user['pass']?>" disabled>
         <input type="hidden" name="lastlogin" value="<?=$user['lastlogin']?>">
+        <input type="text" name="fakelogin" value="<?=fixDate($user['lastlogin'])?>" disabled>
         <div class="fullformdiv">
             <input type="range" name="lvl" id="lvl" min="1" max="100" value="<?=$user['level']?>" onchange="showLevel()">
             <span id="nrlevel"></span>

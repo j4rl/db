@@ -74,3 +74,9 @@
 
 </body>
 </html>
+<script>
+         let mess=<?=$msg?>;
+     if(mess.length>0){
+         alert(mess);
+     }
+     </script>

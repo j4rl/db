@@ -7,7 +7,7 @@
         $user=$_POST['usr'];
         $real=$_POST['real'];
         $pass=md5($_POST['pwd'].$user);
-        $sql="INSERT INTO tbluser(user, pass, realname) VALUES('$user','$pass', '$real')";
+        $sql="INSERT INTO tbluser (user, pass, realname) VALUES ('$user', '$pass', '$real')";
         $result=mysqli_query($conn, $sql);
         header("Location: listuser.php");
     }
