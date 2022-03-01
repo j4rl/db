@@ -25,7 +25,7 @@
             <?php while($row=mysqli_fetch_assoc($result)){ ?>
                     <div class="row">
                         <div class="real"><?=$row['realname']?></div>
-                        Username: <span class="mono"><?=$row['user']?></span><br>Level: <span class="mono"><?=$row['level']?></span><br>
+                        Username: <span class="mono"><?=$row['user']?></span><br>Level: <span class="mono green"><?=$row['level']?></span><br>
                         <span class="pass"><?=$row['pass']?></span>
                         Last login: <span class="mono"><?=lastLogin($row['id'])?></span>
                         <div>

@@ -1,0 +1,11 @@
+.green {
+    position: relative;
+}
+
+.green::after {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -30px;
+    background: url(green.png);
+}

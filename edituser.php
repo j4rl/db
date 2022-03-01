@@ -46,7 +46,7 @@
         <input type="hidden" name="lastlogin" value="<?=$user['lastlogin']?>">
         <input type="text" name="fakelogin" value="<?=fixDate($user['lastlogin'])?>" disabled>
         <div class="fullformdiv">
-            <input type="range" name="lvl" id="lvl" min="1" max="100" value="<?=$user['level']?>" onchange="showLevel()">
+            <input type="range" name="lvl" id="lvl" min="1" max="200" value="<?=$user['level']?>" onchange="showLevel()">
             <span id="nrlevel"></span>
         </div>
         <input type="submit" value="Submit changes" name="btn">
