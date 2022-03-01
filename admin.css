@@ -61,14 +61,18 @@ body {
     margin: 0 auto .3rem auto;
 }
 .byline{
-    font-family: sans-serif;
-    width:100%
-    font-size: .8rem;
-    font-weight: normal;
-    background: var(--accent-color);
+    font-family: 'Lato', sans-serif;
+    width:100%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-style: italic;
+    --background: var(--accent-color);
+    background: linear-gradient(to right, var(--color-secondary-dark) 0%,  var(--accent-color) 100%);
     color: var(--color-text);
     text-align: right;
     padding: .2rem 1rem .2rem 1rem;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
 }
 
 
