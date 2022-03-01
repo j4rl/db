@@ -13,6 +13,7 @@
         if(mysqli_num_rows($result)==1){
             $raden=mysqli_fetch_assoc($result);
             $_SESSION['user']=$raden['user'];
+            $_SESSION['id']=$raden['id'];
             $_SESSION['level']=$raden['level'];
             $msg="Welcome ".$raden['realname']."!";
             $id=$raden['id'];
@@ -55,6 +56,20 @@
 <div class="main">
 
     <?=$msg?> 
+
+    <?php
+        $sql="SELECT tblarticle.head, tblarticle.ingress, tblarticle.text, tbluser.realname FROM tblarticle INNER JOIN tbluser ON tblarticle.author=tbluser.id;";
+        $result=mysqli_query($conn, $sql);
+        while($rad=mysqli_fetch_assoc($result)){
+            echo "<div class='article'>";
+            echo "<h2>".$rad['head']."</h2>";
+            echo "<div class='ingress'>".$rad['ingress']."</div>";
+            echo "<div class='text'>".$rad['text']."</div>";
+            echo "<div class='byline'>".$rad['realname']."</div>";
+            echo "</div>";
+        }
+
+?>
 </div>
 
 </body>

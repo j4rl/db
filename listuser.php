@@ -7,7 +7,7 @@
 
     $conn=makeConn('can');
 
-    $sql="SELECT * FROM tbluser";
+    $sql="SELECT * FROM tbluser ORDER BY level DESC, lastlogin DESC";
     $result=mysqli_query($conn, $sql);
 ?>
 <html lang="en">
@@ -24,7 +24,7 @@
             <h1>List of users</h1>
             <?php while($row=mysqli_fetch_assoc($result)){ ?>
                     <div class="row">
-                        <span class="real"><?=$row['real']?></span><br>
+                        <span class="real"><?=$row['realname']?></span><br>
                         <span class="user"><?=$row['user']?></span><br>Level: <?=$row['level']?><br>
                         <span class="pass"><?=$row['pass']?></span><br>
                         <span class="time"><?=lastLogin($row['id'])?></span><br>

@@ -37,7 +37,7 @@
         $result=mysqli_query($conn, $sql);
         $raden=mysqli_fetch_assoc($result);
         if($raden['lastlogin']){
-            return date('Y-m-d H:i:s', $raden['lastlogin']);
+            return date('Y-m-d H:i', $raden['lastlogin']);
         }else{
             return "Never logged in!";
         }
