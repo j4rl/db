@@ -55,4 +55,19 @@
         $raden=mysqli_fetch_assoc($result);
         return $raden['realname'];
     }
+    function setIcon($intLevel){
+        if($intLevel>=100){
+            return '<img src="admin.png">&nbsp;';
+        }else if($intLevel<100 && $intLevel>=10){
+            return '<img src="green.png">&nbsp;';
+        }else if($intLevel==9){
+            return '<img src="yellow.png">&nbsp;';
+        }else if($intLevel==8){
+            return '<img src="orange.png">&nbsp;';
+        }else if($intLevel==7){
+            return '<img src="red.png">&nbsp;';
+        }else if($intLevel<=6){
+            return '<img src="skull.png">&nbsp;';
+        }
+    }
 ?>

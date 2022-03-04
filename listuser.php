@@ -15,6 +15,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="admin.css">
+
 </head>
 <body>
 <?php require_once("_aheader.php"); ?>
@@ -24,8 +25,8 @@
             <div class="container"><h1>List of users</h1><?php if(isLevel(80)){ ?><a href="adduser.php"><img src="add64.png"></a><?php } ?></div>
             <?php while($row=mysqli_fetch_assoc($result)){ ?>
                     <div class="row">
-                        <div class="real"><?=$row['realname']?></div>
-                        Username: <span class="mono"><?=$row['user']?></span><br>Level: <span class="mono green"><?=$row['level']?></span><br>
+                        <div class="real"><?=setIcon($row['level'])?><?=$row['realname']?></div>
+                        Username: <span class="mono"><?=$row['user']?></span><br>Level: <span class="mono" onLoad="setIcon();"><?=$row['level']?></span><br>
                         <span class="pass"><?=$row['pass']?></span>
                         Last login: <span class="mono"><?=lastLogin($row['id'])?></span>
                         <div>

@@ -6,6 +6,6 @@
     position: absolute;
     width: 25px;
     height: 25px;
-    right: -30px;
+    left: 10px;
     background: url(green.png);
 }

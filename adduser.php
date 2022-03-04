@@ -23,10 +23,10 @@
 <?php require_once("_aheader.php"); ?>
 <?php require_once("_menu.php"); ?>
 <div class="main">
-    <form method="post" action="adduser.php">
+    <form autocomplete="false" method="post" action="adduser.php">
         <input type="text" name="real" placeholder="Your name">
         <input type="text" name="usr" placeholder="Username">
-        <input type="password" name="pwd">
+        <input autocomplete="new-password" type="password" name="pwd">
         <input type="submit" value="Add user" name="btn">
     </form>
 </div>
