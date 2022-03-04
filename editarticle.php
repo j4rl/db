@@ -5,7 +5,7 @@
 
     //Is editform submitted?
     if(isset($_POST['btn'])){
-        $id=intval($_POST['id']);
+        $id=$_POST['id'];
         $head=$_POST['head'];
         $ingress=$_POST['ingress'];
         $text=$_POST['text'];
@@ -13,7 +13,7 @@
         $status=intval($_POST['status']);
         $sql="UPDATE tblarticle SET head='$head', ingress='$ingress', text='$text', added=$added, status=$status, author=$auth WHERE id=$id";
         $result=mysqli_query($conn, $sql);
-        header("Location: listarticles.php");
+        header("Location: listuser.php");
     }
 
 ?>
@@ -40,9 +40,8 @@
         <input type="text" name="head" value="<?=$row['head']?>">
         <input type="text" name="ingress" value="<?=$row['ingress']?>">
         <input type="text" name="text" value="<?=$row['text']?>">
-        <input type="text" name="id" value="<?=$row['id']?>" disabled>
+        <input type="hidden" name="id" value="<?=$row['id']?>">
         <input type="hidden" name="added" value="<?=$row['added']?>">
-        <input type="text" name="fake" value="<?=fixDate($row['added'])?>" disabled>
         <div class="fullformdiv">
             <input type="range" name="status" id="lvl" min="1" max="100" value="<?=$row['status']?>" onchange="showLevel()">
             <span id="nrlevel"></span>
