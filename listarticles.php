@@ -2,7 +2,6 @@
 <?php 
     require_once('func.php');
 
-
     if(!isset($_SESSION['level'])) header("Location: index.php");
 
     $conn=makeConn('can');
