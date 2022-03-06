@@ -7,6 +7,12 @@ font-family: 'Redacted Script', cursive;
 font-family: 'Staatliches', cursive;
 font-family: 'Share Tech Mono', monospace;*/
 
+:root {
+    --headerfont: 'Staatliches', cursive;
+    --specialfont: 'Lato', sans-serif;
+    --monofont: 'Share Tech Mono', monospace;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -45,7 +51,7 @@ body {
 }
 
 .article h2 {
-    font-family: 'Staatliches', cursive;
+    font-family: var(--headerfont);
     font-size: 1.5rem;
     font-weight: 900;
     color: var(--color-text);
@@ -54,31 +60,23 @@ body {
 }
 
 .ingress {
-    font-family: sans-serif;
-    font-size: 1rem;
-    font-weight: bold;
+    font: bold 1rem sans-serif;
     color: var(--color-text);
     text-align: left;
     margin: 0 auto .3rem auto;
 }
 
 .text {
-    font-family: sans-serif;
-    font-size: 1rem;
-    font-weight: normal;
+    font: normal 1rem sans-serif;
     color: var(--color-text);
     text-align: left;
     margin: 0 auto .3rem auto;
 }
 
 .byline {
-    font-family: 'Lato', sans-serif;
-    width: 100%;
-    font-size: 1.1rem;
-    font-weight: bold;
-    font-style: italic;
-    --background: var(--accent-color);
-    background: linear-gradient(to right, var(--color-secondary-dark) 0%, var(--accent-color) 100%);
+    font-family: italic bold 1.1rem var(--specialfont);
+    --background: var(--accent);
+    background: linear-gradient(to right, var(--color-secondary-dark) 0%, var(--accent) 100%);
     color: var(--color-text);
     text-align: right;
     padding: .2rem 1rem .2rem 1rem;
@@ -87,8 +85,7 @@ body {
 }
 
 h1 {
-    font-family: 'Staatliches', cursive;
-    font-size: 2rem;
+    font: 2rem var(--headerfont);
     color: var(--color-text);
 }
 
@@ -96,9 +93,7 @@ h1 {
     padding: .5rem;
     width: 100%;
     background: var(--back-secondary);
-    font-family: 'Lato', sans-serif;
-    font-size: 1.1rem;
-    font-weight: bold;
+    font: bold 1.1rem var(--specialfont);
 }
 
 .row div:last-child {
@@ -111,8 +106,7 @@ h1 {
 }
 
 .row .mono {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 1.2rem;
+    font: 1.2rem var(--monofont);
     color: var(--color-primary-dark);
 }
 
@@ -120,9 +114,7 @@ h1 {
     width: 100%;
     padding: .2rem 1rem .2rem 1rem;
     border-radius: .3rem;
-    font-family: 'Lato', sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
+    font: bold 1.5rem var(--specialfont);
     color: var(--color-secondary);
     background: var(--color-primary-dark);
 }
@@ -165,9 +157,8 @@ form input[type="submit"] {
 }
 
 form h1 {
-    font-size: 30px;
     margin-bottom: 20px;
-    font-family: 'Staatliches', cursive;
+    font: 30px var(--headerfont);
 }
 
 form #nrlevel {
@@ -179,8 +170,7 @@ form #nrlevel {
     margin: 10px;
     background: var(--back-secondary);
     color: black;
-    font-size: .8rem;
-    font-family: 'Staatliches', cursive;
+    font: .8rem var(--headerfont);
     text-align: center;
 }
 
@@ -200,8 +190,7 @@ nav a,
     margin-right: 20px;
     background: var(--color-secondary);
     padding: 10px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 900;
+    font-family: 900 1em var(--specialfont);
 }
 
 nav a:hover,
@@ -216,10 +205,9 @@ nav a:hover,
 }
 
 header h1 {
-    font-size: 4em;
     margin-bottom: 20px;
-    font-family: 'Staatliches', cursive;
-    color: var(--accent-color);
+    font: 4rem var(--headerfont);
+    color: var(--accent);
 }
 
 header {
