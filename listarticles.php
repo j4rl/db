@@ -21,7 +21,7 @@
 <?php require_once("_menu.php"); ?>
     
         <div class="main">
-            <h1>List of articles</h1>
+            <h1>List of articles</h1><?php if(isLevel(80)){ ?><a href="addarticle.php"><img src="add64.png"></a><?php } ?></div>
             <?php while($row=mysqli_fetch_assoc($result)){ ?>
                     <div class="row">
                         <span class="head"><?=$row['head']?></span>&nbsp;<span class="ingress"><?=$row['ingress']?></span><br>
