@@ -34,11 +34,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
-<?php require_once("_header.php"); ?>
-<?php require_once("_menu.php"); ?>
+<?php require_once("includes/_header.php"); ?>
+<?php require_once("includes/_menu.php"); ?>
 
     <?php if(isset($_SESSION['level']) ){ ?>
             <form method="post" action="index.php" class="log">
@@ -72,7 +72,7 @@
 ?>
 </div>
 <footer>
-    <?php require_once("_footer.php"); ?>
+    <?php require_once("includes/_footer.php"); ?>
 </footer>
 </body>
 </html>
