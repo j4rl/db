@@ -10,7 +10,7 @@
     --neutral: #333;
     --neutralLight: #999;
     --neutralLighter: #ccc;
-    --neutralLightest: #eee;
+    --neutralLightest: #fafafa;
     --accent: #ff9800;
     /****************************************************************/
     --back-primary: var(neutralLighter);

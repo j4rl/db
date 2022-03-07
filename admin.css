@@ -17,16 +17,34 @@ font-family: 'Share Tech Mono', monospace;*/
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 1px dotted red;
+    --outline: 1px dotted red;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    --position: absolute;
+    align-items: center;
     background: var(--back-primary);
     width: 100%;
-    min-height: 110vh;
+    height: 100vh;
+}
+
+header {
+    padding: .5em 2em .5em 2em;
+    height: 6rem;
+    width: 100%;
+    text-align: right;
+    background: var(--color-text);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    width: 100%;
+    height: 5rem;
+    background: var(--secondaryDark);
+    padding: 20px;
 }
 
 .main {
@@ -34,19 +52,29 @@ body {
     flex-direction: column;
     align-items: center;
     width: 50%;
-    top: 0px;
-    bottom: 0px;
     min-height: 100%;
     gap: .2rem;
-    background: var(--color-text-secondary);
+    background: var(--secondary);
     margin: 0 auto;
+    padding: 1rem;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--primaryDark);
+    color: var(--neutralLight);
+    width: 100%;
+    height: 3rem;
     padding: 1rem;
 }
 
 .article {
     width: 80%;
     padding: 1rem;
-    background: var(--back-secondary);
+    background: var(--secondaryLight);
     border-radius: .5rem;
 }
 
@@ -74,9 +102,8 @@ body {
 }
 
 .byline {
-    font-family: italic bold 1.1rem var(--specialfont);
-    --background: var(--accent);
-    background: linear-gradient(to right, var(--color-secondary-dark) 0%, var(--accent) 100%);
+    font: italic bold 1.1rem var(--specialfont);
+    background: linear-gradient(to right, var(--secondaryDark) 0%, var(--accent) 100%);
     color: var(--color-text);
     text-align: right;
     padding: .2rem 1rem .2rem 1rem;
@@ -90,9 +117,11 @@ h1 {
 }
 
 .row {
+    display: flex;
+    flex-direction: column;
     padding: .5rem;
     width: 100%;
-    background: var(--back-secondary);
+    background: var(--secondary);
     font: bold 1.1rem var(--specialfont);
 }
 
@@ -107,7 +136,7 @@ h1 {
 
 .row .mono {
     font: 1.2rem var(--monofont);
-    color: var(--color-primary-dark);
+    color: var(--primaryDark);
 }
 
 .row .real {
@@ -115,8 +144,8 @@ h1 {
     padding: .2rem 1rem .2rem 1rem;
     border-radius: .3rem;
     font: bold 1.5rem var(--specialfont);
-    color: var(--color-secondary);
-    background: var(--color-primary-dark);
+    color: var(--secondary);
+    background: var(--primaryDark);
 }
 
 form {
@@ -125,7 +154,7 @@ form {
     align-items: center;
     justify-content: center;
     width: 50%;
-    background: var(--back-primary);
+    background: var(--neutralLighter);
     padding: 20px;
     border-radius: 10px;
 }
@@ -134,7 +163,7 @@ form input {
     width: 100%;
     padding: 10px;
     border-radius: 10px;
-    border: 1px solid var(--back-secondary);
+    border: 1px solid var(--neutralLightest);
     margin-bottom: 10px;
 }
 
@@ -149,11 +178,12 @@ form input[type="submit"] {
     width: 100%;
     padding: 10px;
     border-radius: 10px;
-    border: 1px solid var(--back-secondary);
+    border: 1px solid var(--secondaryDark);
     margin-bottom: 10px;
-    background: var(--back-secondary);
+    background: var(--secondary);
     color: var(--color-text);
     cursor: pointer;
+    font: bold 1.1rem var(--specialfont);
 }
 
 form h1 {
@@ -166,21 +196,12 @@ form #nrlevel {
     height: 1.5rem;
     padding: .2rem;
     border-radius: 50%;
-    border: 1px solid var(--back-secondary);
+    border: 1px solid var(--secondaryDark);
     margin: 10px;
-    background: var(--back-secondary);
+    background: var(--secondary);
     color: black;
     font: .8rem var(--headerfont);
     text-align: center;
-}
-
-nav {
-    display: flex;
-    flex-direction: row;
-    align-items: left;
-    width: 100%;
-    background: var(--color-secondary-dark);
-    padding: 20px;
 }
 
 nav a,
@@ -188,9 +209,9 @@ nav a,
     color: var(--color-text);
     text-decoration: none;
     margin-right: 20px;
-    background: var(--color-secondary);
+    background: var(--secondary);
     padding: 10px;
-    font-family: 900 1em var(--specialfont);
+    font: 900 1.1em var(--specialfont);
 }
 
 nav a:hover,
@@ -208,13 +229,6 @@ header h1 {
     margin-bottom: 20px;
     font: 4rem var(--headerfont);
     color: var(--accent);
-}
-
-header {
-    padding: .5em 2em .5em 2em;
-    height: 5rem;
-    text-align: right;
-    background: var(--color-text);
 }
 
 .log {
