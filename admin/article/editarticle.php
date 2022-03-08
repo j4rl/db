@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-    require_once('func.php');
+    require_once('../../func.php');
     $conn=makeConn('can');
 
     //Is editform submitted?
@@ -21,11 +21,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit user</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="../../css/admin.css">
 </head>
 <body>
-<?php require_once("_aheader.php"); ?>
-<?php require_once("_menu.php"); ?>
+<?php require_once("../../includes/_aheader.php"); ?>
+<?php require_once("../../includes/_menu.php"); ?>
  
 <div class="main">
     <?php
@@ -51,7 +51,8 @@
 
 <?php  } ?>
 
-</div>   
+</div>  
+<?php require_once("../../includes/_footer.php"); ?>       
 </body>
 </html>
 <script>

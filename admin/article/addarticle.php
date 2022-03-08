@@ -32,5 +32,6 @@
         <input type="submit" value="Add article" name="btn">
     </form>
 </div>
+<?php require_once("../../includes/_footer.php"); ?>      
 </body>
 </html>

@@ -71,9 +71,7 @@
 
 ?>
 </div>
-<footer>
     <?php require_once("includes/_footer.php"); ?>
-</footer>
 </body>
 </html>
 <script>

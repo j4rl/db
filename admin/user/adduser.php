@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-    require_once('func.php');
+    require_once('../../func.php');
     $conn=makeConn('can');
     
     if(isset($_POST['btn'])){
@@ -17,11 +17,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Add user</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="../../css/admin.css">
 </head>
 <body>
-<?php require_once("_aheader.php"); ?>
-<?php require_once("_menu.php"); ?>
+<?php require_once("../../includes/_aheader.php"); ?>
+<?php require_once("../../includes/_menu.php"); ?>
 <div class="main">
     <form autocomplete="false" method="post" action="adduser.php">
         <input type="text" name="real" placeholder="Your name">
@@ -30,5 +30,6 @@
         <input type="submit" value="Add user" name="btn">
     </form>
 </div>
+<?php require_once("../../includes/_footer.php"); ?>      
 </body>
 </html>

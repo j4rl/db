@@ -1,6 +1,10 @@
 <?php
     session_start();
 
+    function server(){
+        return $_SERVER['HTTP_HOST'];
+    }
+
     function makeConn($dbname, $dbserver="localhost", $dbuser="root", $dbpass=""){
         $conn=mysqli_connect($dbserver,$dbuser,$dbpass,$dbname);
         return $conn;
