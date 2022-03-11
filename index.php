@@ -56,6 +56,7 @@
 <div class="main">
 
     <?=$msg?> 
+    <?=server()?>
 
     <?php
         $sql="SELECT tblarticle.head, tblarticle.ingress, tblarticle.text, tbluser.realname FROM tblarticle INNER JOIN tbluser ON tblarticle.author=tbluser.id;";

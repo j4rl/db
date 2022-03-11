@@ -75,4 +75,43 @@
             return '<img src="'.$myPath.'skull.png">&nbsp;';
         }
     }
+    function setStatus($intStatus){
+        switch($intStatus) {
+            case 1:
+                return "This is saved for evidence";
+                break;
+            case 2:
+                return "Hate speech";
+                break;
+            case 3: 
+                return "Offensive language";
+                break;
+            case 4: 
+                return "Spam";
+                break;
+            case 5:
+                return "Banned for violation of rules";
+                break;
+            case 6:
+                return "Sexual content";
+                break;
+            case 7: 
+                return "Violent or repulsive content";
+                break;
+            case 8: 
+                return "Set on watchlist by user";
+                break;
+            case 9: 
+                return "Awaiting to be published";
+                break;                
+            case 10:
+                return "Published";
+                break;
+            default:
+                return "Unvalid status value";
+                break;
+        }
+    }
+
+
 ?>

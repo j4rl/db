@@ -13,7 +13,7 @@
         $status=intval($_POST['status']);
         $sql="UPDATE tblarticle SET head='$head', ingress='$ingress', text='$text', added=$added, status=$status, author=$auth WHERE id=$id";
         $result=mysqli_query($conn, $sql);
-        header("Location: listuser.php");
+        header("Location: listarticles.php");
     }
 
 ?>
@@ -38,12 +38,12 @@
 ?>
     <form method="post" action="editarticle.php"><h1>Edit article</h1>
         <input type="text" name="head" value="<?=$row['head']?>">
-        <input type="text" name="ingress" value="<?=$row['ingress']?>">
-        <input type="text" name="text" value="<?=$row['text']?>">
+        <textarea name="ingress" style="resize:vertical;" rows="4"><?=$row['ingress']?></textarea>
+        <textarea name="text" style="resize:vertical;" rows="10"><?=$row['text']?></textarea>
         <input type="hidden" name="id" value="<?=$row['id']?>">
         <input type="hidden" name="added" value="<?=$row['added']?>">
         <div class="fullformdiv">
-            <input type="range" name="status" id="lvl" min="1" max="100" value="<?=$row['status']?>" onchange="showLevel()">
+            <input type="range" name="status" id="lvl" min="1" max="10" value="<?=$row['status']?>" onchange="showLevel()">
             <span id="nrlevel"></span>
         </div>
         <input type="submit" value="Submit changes" name="btn">

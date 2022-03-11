@@ -23,9 +23,12 @@
         <div class="container"><h1>List of articles</h1><?php if(isLevel(80)){ ?><a href="addarticle.php"><img src="../../icons/add64.png"></a><?php } ?></div>
             <?php while($row=mysqli_fetch_assoc($result)){ ?>
                     <div class="row">
-                        <span class="head"><?=$row['head']?></span>&nbsp;<span class="ingress"><?=$row['ingress']?></span><br>
-                        By:<span class="author"><?=getRealName($row['author'])?></span>&nbsp;Status: <?=$row['status']?><br>
-                        <br>Added:<span class="time"><?=fixDate($row['added'])?></span>
+                        <details>
+                            <summary><?=$row['head']?></summary>
+                            <p><?=$row['ingress']?></p>
+                        </details>
+                        <div class="list_by">By:&nbsp;&nbsp;<span class="list_mono"><?=getRealName($row['author'])?></span>&nbsp;&nbsp;Status:&nbsp;&nbsp;<span class="list_mono"><?=setStatus(intval($row['status']))?></span></div>
+                        <div class="list_added">Added:<span class="list_mono"><?=fixDate($row['added'])?></span></div>
                         <div>
                             <?php if(isLevel(80)){ ?><a href="delarticle.php?del=<?=$row['id']?>"><img src="../../icons/delete.png"></a><?php } ?>
                             <?php if(isLevel(80)){ ?><a href="editarticle.php?edit=<?=$row['id']?>"><img src="../../icons/edit.png"></a><?php } ?>

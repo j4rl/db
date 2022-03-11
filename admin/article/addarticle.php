@@ -27,8 +27,8 @@
 <div class="main">
     <form method="post" action="addarticle.php">
         <input type="text" name="head" placeholder="Article header">
-        <input type="text" name="ingress" placeholder="Ingress">
-        <input type="text" name="text" placeholder="Text">
+        <textarea name="ingress" placeholder="Ingress" style="resize:vertical;" rows="4"></textarea>
+        <textarea name="text" placeholder="Article text" style="resize:vertical;" rows="10"></textarea>
         <input type="submit" value="Add article" name="btn">
     </form>
 </div>
