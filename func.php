@@ -1,6 +1,7 @@
 <?php
     session_start();
 
+
     function server(){
         return $_SERVER['HTTP_HOST'];
     }
