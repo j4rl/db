@@ -27,7 +27,7 @@
                             <summary><?=$row['head']?></summary>
                             <p><?=$row['ingress']?></p>
                         </details>
-                        <div class="list_by">By:&nbsp;&nbsp;<span class="list_mono"><?=getRealName($row['author'])?></span>&nbsp;&nbsp;Status:&nbsp;&nbsp;<span class="list_mono"><?=setStatus(intval($row['status']))?></span></div>
+                        <div class="list_by">By:&nbsp;&nbsp;<span class="list_mono"><?=getRealName($row['author'])?></span>&nbsp;&nbsp;Status:&nbsp;&nbsp;<span class="list_mono"><?=getStatusString(intval($row['status']))?></span></div>
                         <div class="list_added">Added:<span class="list_mono"><?=fixDate($row['added'])?></span></div>
                         <div>
                             <?php if(isLevel(80)){ ?><a href="delarticle.php?del=<?=$row['id']?>"><img src="../../icons/delete.png"></a><?php } ?>
