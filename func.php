@@ -1,6 +1,7 @@
 <?php
     session_start();
 
+
     function server(){
         return $_SERVER['HTTP_HOST'];
     }
@@ -75,7 +76,7 @@
             return '<img src="'.$myPath.'skull.png">&nbsp;';
         }
     }
-    function setStatus($intStatus){
+    function getStatusString($intStatus){
         switch($intStatus) {
             case 1:
                 return "This is saved for evidence";
