@@ -35,6 +35,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/icon.css">
 </head>
 <body>
 <?php require_once("includes/_header.php"); ?>
@@ -46,7 +47,7 @@
             </form>
     <?php }else{  ?>
     <form method="post" action="index.php" class="log">
-        <h1>Log in</h1>
+        <i class=".profile.icon"></i><h1>Log in</h1>
         <input type="text" name="usr" placeholder="Användarnamn">
         <input type="password" name="pwd">
         <input type="submit" name="btn" value="Log in!">
@@ -55,8 +56,6 @@
 
 <div class="main">
 
-    <?=$msg?> 
-    <?=server()?>
 
     <?php
         $sql="SELECT tblarticle.head, tblarticle.ingress, tblarticle.text, tbluser.realname FROM tblarticle INNER JOIN tbluser ON tblarticle.author=tbluser.id;";
@@ -76,8 +75,11 @@
 </body>
 </html>
 <script>
-         let mess=<?=$msg?>;
-     if(mess.length>0){
+    document.addEventListener("DOMContentLoaded", function(){
+    let mess="<?=$msg?>";
+     if(mess.length){
          alert(mess);
-     }
+     } 
+    })
+
      </script>
